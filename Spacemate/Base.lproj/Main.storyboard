@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="glo-t5-52o">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -45,5 +45,37 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="96.7016491754123"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="PMb-6F-DLU">
+            <objects>
+                <viewController id="glo-t5-52o" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="spn-bA-WV4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color_logo_transparent.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="frR-nt-bWe">
+                                <rect key="frame" x="39" y="91" width="296" height="129"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="129" id="E1U-18-5td"/>
+                                    <constraint firstAttribute="width" constant="296" id="gTn-Xd-dIk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="frR-nt-bWe" firstAttribute="leading" secondItem="wXJ-UX-prL" secondAttribute="leading" constant="39" id="e5m-WI-JcG"/>
+                            <constraint firstItem="wXJ-UX-prL" firstAttribute="trailing" secondItem="frR-nt-bWe" secondAttribute="trailing" constant="40" id="jm3-cN-0L1"/>
+                            <constraint firstItem="frR-nt-bWe" firstAttribute="top" secondItem="wXJ-UX-prL" secondAttribute="top" constant="71" id="yjY-fh-nA7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wXJ-UX-prL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mc2-f8-VgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1045.5999999999999" y="96.7016491754123"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="color_logo_transparent.png" width="3194" height="968"/>
+    </resources>
 </document>
