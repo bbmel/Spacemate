@@ -146,15 +146,15 @@
             </objects>
             <point key="canvasLocation" x="1045.5999999999999" y="96.7016491754123"/>
         </scene>
-        <!--View Controller-->
+        <!--Update View Controller-->
         <scene sceneID="OSu-Fj-uLb">
             <objects>
-                <viewController id="5eI-wD-tyV" sceneMemberID="viewController">
+                <viewController id="5eI-wD-tyV" customClass="UpdateViewController" customModule="Spacemate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eBj-8x-gjd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="5B0-7p-OBY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="5B0-7p-OBY">
                                 <rect key="frame" x="50" y="40" width="275" height="275"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5B0-7p-OBY" secondAttribute="height" multiplier="1:1" id="FyI-2e-8Nh"/>
@@ -163,6 +163,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXy-Uz-ehS">
                                 <rect key="frame" x="112" y="341" width="150" height="30"/>
                                 <state key="normal" title="Update profile picture"/>
+                                <connections>
+                                    <action selector="updateImageTapped:" destination="5eI-wD-tyV" eventType="touchUpInside" id="mqp-S5-UtP"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDc-RF-vfi">
                                 <rect key="frame" x="165" y="379" width="45.5" height="21"/>
@@ -210,6 +213,9 @@
                                 <state key="normal" title="Update">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="updateTapped:" destination="5eI-wD-tyV" eventType="touchUpInside" id="oh6-7P-swA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -242,6 +248,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xqm-we-gzL"/>
                     </view>
+                    <connections>
+                        <outlet property="interestedGenderSwitch" destination="7B3-Zs-UbW" id="yD5-7R-1t1"/>
+                        <outlet property="profileImageView" destination="5B0-7p-OBY" id="eFn-rE-Udu"/>
+                        <outlet property="userGenderSwitch" destination="ldq-mU-RbX" id="lAa-aL-qUV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQn-Vq-QdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
