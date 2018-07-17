@@ -11,6 +11,7 @@
 		4036D36320FD47B200356C2B /* 20565706.png in Resources */ = {isa = PBXBuildFile; fileRef = 4036D36220FD47B200356C2B /* 20565706.png */; };
 		4036D36520FE4A8F00356C2B /* color_logo_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 4036D36420FE4A8F00356C2B /* color_logo_transparent.png */; };
 		40D5BE6020FE59EB002CE471 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D5BE5F20FE59EB002CE471 /* LoginViewController.swift */; };
+		40D5BE6220FE9502002CE471 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D5BE6120FE9502002CE471 /* UpdateViewController.swift */; };
 		40D6309220FD25730029419E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6309120FD25730029419E /* AppDelegate.swift */; };
 		40D6309720FD25730029419E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D6309520FD25730029419E /* Main.storyboard */; };
 		40D6309920FD25750029419E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D6309820FD25750029419E /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		4036D36220FD47B200356C2B /* 20565706.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20565706.png; sourceTree = SOURCE_ROOT; };
 		4036D36420FE4A8F00356C2B /* color_logo_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_logo_transparent.png; sourceTree = SOURCE_ROOT; };
 		40D5BE5F20FE59EB002CE471 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		40D5BE6120FE9502002CE471 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		40D6308E20FD25730029419E /* Spacemate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacemate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D6309120FD25730029419E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40D6309320FD25730029419E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				40D6309120FD25730029419E /* AppDelegate.swift */,
 				40D6309320FD25730029419E /* ViewController.swift */,
 				40D6309520FD25730029419E /* Main.storyboard */,
+				40D5BE6120FE9502002CE471 /* UpdateViewController.swift */,
 				40D6309820FD25750029419E /* Assets.xcassets */,
 				40D6309A20FD25750029419E /* LaunchScreen.storyboard */,
 				40D6309D20FD25750029419E /* Info.plist */,
@@ -216,6 +219,7 @@
 				40D5BE6020FE59EB002CE471 /* LoginViewController.swift in Sources */,
 				4036D36120FD2B1000356C2B /* ViewController.swift in Sources */,
 				40D6309220FD25730029419E /* AppDelegate.swift in Sources */,
+				40D5BE6220FE9502002CE471 /* UpdateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
