@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import Parse
 
 class UpdateViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var userGenderSwitch: UISwitch!
     @IBOutlet weak var interestedGenderSwitch: UISwitch!
     
+    @IBOutlet weak var errorLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        errorLabel.isHidden = true
 
         // Do any additional setup after loading the view.
     }
@@ -38,6 +43,29 @@ class UpdateViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     @IBAction func updateTapped(_ sender: Any) {
+        PFUser.current()?["isFemale"] = userGenderSwitch.isOn
+        PFUser.current()?["isInterestedInWomen"] = interestedGenderSwitch.isOn
+        
+        if let image = profileImageView.image {
+            if let imageData = UIImagePNGRepresentation(image) {
+                PFUser.current()?["photo"] = PFFile(name: "profile.png", data: imageData)
+                PFUser.current()?.saveInBackground(block: { (success, error) in
+                    if error != nil {
+                        var errorMessage = "Update failed, try again"
+                        
+                        if let newError = error as NSError? {
+                            if let detailError = newError.userInfo["error"] as? String {
+                                errorMessage = detailError
+                            }
+                        }
+                        self.errorLabel.isHidden = false
+                        self.errorLabel.text = errorMessage
+                    } else {
+                        print("Update successful!")
+                    }
+                })
+            }
+        }
         
     }
     
