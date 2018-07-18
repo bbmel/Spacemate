@@ -39,16 +39,16 @@ class UpdateViewController: UIViewController, UINavigationControllerDelegate, UI
             })
         }
         
-        createMan()
+        createMale()
     }
             
     
         // Do any additional setup after loading the view.
     
-    func createMan() {
-        let imageUrls = [""]
+    func createMale() {
+        let imageUrls = ["https://www.disneyclips.com/imagesnewb6/images/n191.gif", "https://www.disneyclips.com/imagesnewb/images/lefou.png", "https://www.disneyclips.com/imagesnewb/images/clipgaston.gif", "https://www.disneyclips.com/imagesnewb/images/hades_face.gif", "https://www.disneyclips.com/imagesnewb/images/clippain.gif", "https://www.disneyclips.com/imagesnewb/images/clipshanyu5.gif", "https://www.disneyclips.com/imagesnewb/images/smee.png", "https://www.disneyclips.com/imagesnewb/images/hook.png", "https://www.disneyclips.com/imagesnewb3/images/clipbroad3.gif", "https://www.disneyclips.com/imagesnewb3/images/clipgol2.gif", "https://www.disneyclips.com/imagesnewb3/images/clipxan.gif", "https://www.disneyclips.com/imagesnewb/images/maurice_dressedup.gif", "https://www.disneyclips.com/imagesnewb/images/prince.png", "https://www.disneyclips.com/imagesnewb/images/beast5.png"]
         
-        var counter = 39
+        var counter = 66
         
         for imageUrl in imageUrls {
             counter += 1
@@ -60,11 +60,11 @@ class UpdateViewController: UIViewController, UINavigationControllerDelegate, UI
                     user.username = String(counter)
                     user.password = "abc123"
                     user["isFemale"] = false
-                    user["isInterestedInWomen"] = true
+                    user["isInterestedInWomen"] = false
                     
                     user.signUpInBackground(block: { (success, error) in
                         if success {
-                            print("Male user created!")
+                            print("Male male user created!")
                         }
                     })
                 }
