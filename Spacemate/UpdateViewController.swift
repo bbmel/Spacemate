@@ -20,9 +20,32 @@ class UpdateViewController: UIViewController, UINavigationControllerDelegate, UI
         super.viewDidLoad()
         
         errorLabel.isHidden = true
+        
+        if let isFemale = PFUser.current()?["isFemale"] as? Bool {
+            userGenderSwitch.setOn(isFemale, animated: false)
+        }
+        
+        if let isInterestedInWomen = PFUser.current()?["isInterestedInWomen"] as? Bool {
+            interestedGenderSwitch.setOn(isInterestedInWomen, animated: false)
+        }
+        
+        if let photo = PFUser.current()?["photo"] as? PFFile {
+            photo.getDataInBackground(block: { (data, error) in
+                if let imageData = data {
+                    if let image = UIImage(data: imageData) {
+                        self.profileImageView.image = image
+                    }
+                }
+            })
+        }
+    }
+            
+        
+        
+
 
         // Do any additional setup after loading the view.
-    }
+    
     
     @IBAction func updateImageTapped(_ sender: Any) {
         let imagePicker = UIImagePickerController()
@@ -68,7 +91,4 @@ class UpdateViewController: UIViewController, UINavigationControllerDelegate, UI
         }
         
     }
-    
-
-
 }

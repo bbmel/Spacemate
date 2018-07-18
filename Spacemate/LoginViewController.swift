@@ -26,7 +26,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         errorLabel.isHidden = true
-
+        
+    
         // Do any additional setup after loading the view.
     }
     
@@ -52,6 +53,7 @@ class LoginViewController: UIViewController {
                     
                 } else {
                     print("Sign up successful!")
+                    self.performSegue(withIdentifier: "updateSegue", sender: nil)
                 }
             })
         } else {
@@ -72,6 +74,7 @@ class LoginViewController: UIViewController {
                             
                         } else {
                             print("Login successful!")
+                            self.performSegue(withIdentifier: "updateSegue", sender: nil)
                         }
                     })
                 }
@@ -80,6 +83,11 @@ class LoginViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if PFUser.current() != nil {
+            self.performSegue(withIdentifier: "updateSegue", sender: nil)
+        }
+    }
     
     @IBAction func changeLogInSignUpTapped(_ sender: Any) {
         if signUpMode {
