@@ -115,6 +115,9 @@ class UpdateViewController: UIViewController, UINavigationControllerDelegate, UI
                         self.errorLabel.text = errorMessage
                     } else {
                         print("Update successful!")
+                        
+                        // proceed to swipe screen once info has been updated
+                        self.performSegue(withIdentifier: "updateToSwipeSegue", sender: nil)
                     }
                 })
             }

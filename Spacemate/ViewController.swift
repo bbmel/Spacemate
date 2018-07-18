@@ -12,6 +12,11 @@ import Parse
 class ViewController: UIViewController {
     @IBOutlet weak var swipeLabel: UILabel!
     
+    @IBAction func logoutTapped(_ sender: Any) {
+        PFUser.logOut()
+        performSegue(withIdentifier: "logoutSegue", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
