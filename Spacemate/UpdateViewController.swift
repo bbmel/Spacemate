@@ -39,19 +39,16 @@ class UpdateViewController: UIViewController, UINavigationControllerDelegate, UI
             })
         }
         
-        //createMan()
+        createMan()
     }
             
-        
-        
-
-
+    
         // Do any additional setup after loading the view.
     
     func createMan() {
-        let imageUrls = ["https://www.disneyclips.com/imagesnewb6/images/cliptarzantall.gif", "https://www.disneyclips.com/imagesnewb6/images/clipclayton.gif", "https://www.disneyclips.com/imagesnewb2/images/j21.gif", "https://www.disneyclips.com/imagesnewb6/images/nov123.gif", "https://www.disneyclips.com/imagesnewb4/images/prince-phillip.png", "https://www.disneyclips.com/imagesnewb/images/june103.gif", "https://www.disneyclips.com/imagesnewb/images/june912.gif", "https://www.disneyclips.com/imagesnewb/images/june910.gif", "https://www.disneyclips.com/imagesnewb/images/june98.gif", "https://www.disneyclips.com/imagesnewb/images/mira75.gif"]
+        let imageUrls = [""]
         
-        var counter = 16
+        var counter = 39
         
         for imageUrl in imageUrls {
             counter += 1
