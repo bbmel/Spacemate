@@ -15,6 +15,7 @@ class MatchesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var images : [UIImage] = []
     var userIds : [String] = []
+    var messages : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +37,30 @@ class MatchesViewController: UIViewController, UITableViewDataSource, UITableVie
                                     imageFile.getDataInBackground(block: { (data, error) in
                                         if let imageData = data {
                                             if let image = UIImage(data: imageData) {
-                                                self.images.append(image)
+                                                //self.images.append(image)
                                                 if let objectId = theUser.objectId {
-                                                    self.userIds.append(objectId)
-                                                    self.tableView.reloadData()
+                                                    //self.userIds.append(objectId)
+                                                    
+                                                    let messagesQuery = PFQuery(className: "Message")
+                                                    messagesQuery.whereKey("recipient", equalTo: PFUser.current()?.objectId as Any)
+                                                    messagesQuery.whereKey("sender", equalTo: theUser.objectId as Any)
+                                                    
+                                                    messagesQuery.findObjectsInBackground(block: { (objects, error) in
+                                                        var messagetext = "No messages yet"
+                                                        if let objects = objects {
+                                                            for message in objects {
+                                                                if let content = message["content"] as? String {
+                                                                    messagetext = content
+                                                                }
+                                                            }
+                                                        }
+                                                        self.messages.append(messagetext)
+                                                        self.userIds.append(objectId)
+                                                        self.images.append(image)
+                                                        self.tableView.reloadData()
+                                                        
+                                                    })
+                                                    //self.tableView.reloadData()
                                                 }
                                             }
                                         }
@@ -68,6 +89,7 @@ class MatchesViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.messageLabel.text = "No messages yet"
             cell.profileImageView.image = images[indexPath.row]
             cell.recipientObjectId = userIds[indexPath.row]
+            cell.messageLabel.text = messages[indexPath.row]
             return cell
         }
         return UITableViewCell()
